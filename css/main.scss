@@ -1,0 +1,131 @@
+$default-shadow-color: rgba(0, 0, 0, 0.15);
+$default-background: #EEEEEE;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+@mixin grid-coordinates($x-start, $x-finish, $y-start, $y-finish) {
+    grid-row-start: $y-start;
+    grid-row-end: $y-finish;
+    grid-column-start: $x-start;
+    grid-column-end: $x-finish;
+}
+
+@mixin modal-button {
+    box-shadow: 0 1px 2px $default-shadow-color;
+    transition: all 1s ease;
+}
+
+@mixin modal-button-hover($color) {
+    box-shadow: 0 2px 4px $default-shadow-color;
+    background-color: rgba($color, $alpha: 0.5);
+}
+
+@mixin modal-button-active {
+    box-shadow: 0 8px 16px $default-shadow-color;
+    transition: ease box-shadow 0.1s;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 1px;
+}
+
+.down {
+    transform: rotate(45deg);
+}
+
+body {
+    font-family: "Montserrat";
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background: $default-background;
+    overflow: hidden;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    grid-template-columns: 66% 34%;
+    grid-template-rows: 50%;
+
+    .time {
+        @include grid-coordinates(1, 2, 1, 2);
+        box-shadow: 0 4px 8px $default-shadow-color;
+        margin: 1em 1em 1em 1em;
+
+        .time-container {
+            padding: 7em 3em 3em 3em;
+
+            h1 {
+                font-family: monospace;
+                text-align: center;
+            }
+        }
+    }
+
+    .data {
+        @include grid-coordinates(1, 2, 2, 3);
+
+        .data-main {
+            padding: 1em 1em 1em 1em;
+            box-shadow: 0 1px 2px $default-shadow-color;
+
+            .data-container {
+                margin: 0.5em;
+                box-shadow: 0 1px 2px $default-shadow-color;
+                padding: 1em;
+
+                * {
+                    display: inline-block;
+                    padding: 0.3em 0.3em 0.3em 0.3em;
+                    margin: 0;
+                }
+
+                #practice-algs,
+                #practice-goals {
+                    @include modal-button();
+                }
+
+                #practice-algs:hover,
+                #practice-goals:hover {
+                    @include modal-button-hover(#3db3d6);
+                }
+
+                #practice-algs:active,
+                #practice-goals:active {
+                    @include modal-button-active();
+                }
+
+            }
+        }
+    }
+
+    .case {
+        @include grid-coordinates(2, 3, 1, 3);
+        font-weight: 900;
+        color: #F0F0F0;
+        background-color: #3db3d6;
+        box-shadow: -4px 0 8px $default-shadow-color;
+
+        .case-main {
+            padding: 1em 1em 1em 1em;
+
+            .case-container {
+                margin: 0.5em;
+                box-shadow: 0 1px 2px $default-shadow-color;
+                padding: 1em;
+
+                * {
+                    display: inline-block;
+                    padding: 0.3em 0.3em 0.3em 0.3em;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

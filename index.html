@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Cublet</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="time">
+            <div class="time-container">
+                <h1 id="timer">0.00</h1>
+            </div>
+        </div>
+        <div class="data">
+            <div class="data-main">
+                <div class="data-container">
+                    <div id="practice-type">
+                        OLL <div class="arrow down"></div>
+                    </div>
+                    <div id="practice-algs">
+                        Select what cases to practice.
+                    </div>
+                </div>
+                <div class="data-container">
+                    <div id="practice-goals">
+                        Edit training goals
+                    </div>
+                </div>
+                <div class="data-container">
+                    <div class="case-type">OLL</div> cases left to learn: <div id="cases-left">--</div>
+                </div>
+                <div class="data-container">
+                    <div class="case-type">OLL</div> average: <div id="case-group-average">--</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="case">
+            <div class="case-main">
+                <div class="case-container">
+                    <div id="flipcard">
+                        <div id="flipcard-front"><img id="case-image" alt=""></div>
+                        <div id="flipcard-back">
+                            <div id="case-info">
+
+                            </div>
+                            <div id="case-info-more">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-container">
+                    <div id="case-algorithm">--</div>
+                </div>
+                <div class="case-container">
+                    Best: <div id="case-best"></div>
+                </div>
+                <div class="case-container">
+                    Average: <div id="case-average"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
