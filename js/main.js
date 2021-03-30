@@ -25,13 +25,14 @@ function setInnerHtml(ele, dat) {
 let timeoutReady
 
 function timerHandler(keyType) {
-    if (keyType) {
-        if (isTimerRunning) {
+    if (keyType) { //Is key up or down?
+        if (isTimerRunning) { //Check if timer is already running
             currentTime = getTimerValue()
             clearInterval(interval)
             updateTimer(currentTime)
             isTimerRunning = false
-        } else {
+            storeTime(currentTime)
+        } else { //If it isn't get the timer ready
             timerReady = false
             $("timer").style.color = "#ED2800"
             timeoutReady = setTimeout(() => {
@@ -40,7 +41,7 @@ function timerHandler(keyType) {
             }, 500);
         }
     } else {
-        if (!isTimerRunning) {
+        if (!isTimerRunning) { //If timer isn't running, either start it or reset.
             if (timerReady) {
                 isTimerRunning = true
                 timerReady = false

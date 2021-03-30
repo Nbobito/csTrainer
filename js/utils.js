@@ -1,6 +1,28 @@
 function $(ele) {
     return document.getElementById(ele)
 }
+
+function _(ele){
+    return document.getElementsByTagName(ele)
+}
+
+function storeTime(time){
+    let times = getTimes()
+    times.push(time)
+    console.log(times)
+    localStorage.removeItem("times")
+    localStorage.setItem("times", JSON.stringify(times))
+    return times
+}
+
+function getTimes(){
+    return JSON.parse(localStorage.getItem("times")) || []
+}
+
+function clearTimes(){
+    return localStorage.removeItem("times")
+}
+
 function getMean(arr) {
     let out = 0
 
