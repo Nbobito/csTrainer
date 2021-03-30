@@ -62,6 +62,7 @@ body {
             padding: 7em 3em 3em 3em;
 
             h1 {
+                vertical-align: bottom;
                 font-family: monospace;
                 text-align: center;
             }
@@ -70,6 +71,7 @@ body {
 
     .data {
         @include grid-coordinates(1, 2, 2, 3);
+        overflow-y: auto;
 
         .data-main {
             padding: 1em 1em 1em 1em;
@@ -128,4 +130,22 @@ body {
             }
         }
     }
+}
+@media screen and (max-width: 700px){
+    .container{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 33% 33% 34%;
+        overflow: hidden;
+
+        .case{
+            @include grid-coordinates(1, 2, 2, 3);
+            overflow: auto;
+        }
+
+        .data{
+            @include grid-coordinates(1, 2, 3, 4);
+        }
+    }
+
 }

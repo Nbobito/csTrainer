@@ -1,16 +1,12 @@
-var offset, interval, currentTime, timerReady = false
-var isKeyDown, isTimerRunning = false
-
-function $(ele) {
-    return document.getElementById(ele)
-}
+let offset, interval, currentTime, timerReady = false
+let isKeyDown, isTimerRunning = false
 
 function startTimer() {
     offset = Date.now()
 }
 
 function getTimerValue(format = true) {
-    var output
+    let output
     if (format) {
         output = (Math.round(((Date.now() - offset) / 1000 + Number.EPSILON) * 100) / 100).toFixed(2)
     } else {
@@ -23,7 +19,10 @@ function updateTimer(displayTime) {
     $("timer").innerHTML = displayTime || getTimerValue()
 }
 
-var timeoutReady
+function setInnerHtml(ele, dat) {
+    $(ele).innerHTML = dat
+}
+let timeoutReady
 
 function timerHandler(keyType) {
     if (keyType) {
@@ -41,14 +40,14 @@ function timerHandler(keyType) {
             }, 500);
         }
     } else {
-        if(!isTimerRunning){
-            if(timerReady){
+        if (!isTimerRunning) {
+            if (timerReady) {
                 isTimerRunning = true
                 timerReady = false
                 startTimer()
                 interval = setInterval(updateTimer, 10);
                 $("timer").style.color = "#000000"
-            } else{
+            } else {
                 clearTimeout(timeoutReady)
                 $("timer").style.color = "#000000"
             }
@@ -57,19 +56,21 @@ function timerHandler(keyType) {
 }
 
 document.addEventListener("keydown", function (event) {
-    var key = event.keyCode
+    let key = event.key
     if (!isKeyDown) {
         isKeyDown = true
         switch (key) {
-            case 32:
+            case " ":
                 timerHandler(true)
                 break
+            default:
+
         }
     }
 })
 
 document.addEventListener("keyup", function (event) {
-    var key = event.keyCode
+    let key = event.key
     if (isKeyDown) {
         isKeyDown = false
         switch (key) {

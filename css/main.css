@@ -49,6 +49,7 @@ body {
 }
 
 .container .time .time-container h1 {
+  vertical-align: bottom;
   font-family: monospace;
   text-align: center;
 }
@@ -60,6 +61,7 @@ body {
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 2;
+  overflow-y: auto;
 }
 
 .container .data .data-main {
@@ -133,5 +135,34 @@ body {
   display: inline-block;
   padding: 0.3em 0.3em 0.3em 0.3em;
   margin: 0;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: 33% 33% 34%;
+        grid-template-rows: 33% 33% 34%;
+    overflow: hidden;
+  }
+  .container .case {
+    -ms-grid-row: 2;
+        grid-row-start: 2;
+    grid-row-end: 3;
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    grid-column-end: 2;
+    overflow: auto;
+  }
+  .container .data {
+    -ms-grid-row: 3;
+        grid-row-start: 3;
+    grid-row-end: 4;
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    grid-column-end: 2;
+  }
 }
 /*# sourceMappingURL=main.css.map */
