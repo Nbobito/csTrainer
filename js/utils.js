@@ -6,10 +6,10 @@ function _(ele){
     return document.getElementsByTagName(ele)
 }
 
-function storeTime(time){
+function storeTime(time, type){
     let times = getTimes()
-    times.push(time)
-    console.log(times)
+    times.push([time, type])
+    //console.log(times)
     localStorage.removeItem("times")
     localStorage.setItem("times", JSON.stringify(times))
     return times

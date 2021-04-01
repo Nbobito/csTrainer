@@ -23,7 +23,8 @@ function setInnerHtml(ele, dat) {
     $(ele).innerHTML = dat
 }
 let timeoutReady
-
+let n = 30
+let type = "free"
 function timerHandler(keyType) {
     if (keyType) { //Is key up or down?
         if (isTimerRunning) { //Check if timer is already running
@@ -31,7 +32,8 @@ function timerHandler(keyType) {
             clearInterval(interval)
             updateTimer(currentTime)
             isTimerRunning = false
-            storeTime(currentTime)
+            storeTime(currentTime, type)
+            quickTimes(n)
         } else { //If it isn't get the timer ready
             timerReady = false
             $("timer").style.color = "#ED2800"
@@ -70,6 +72,26 @@ document.addEventListener("keydown", function (event) {
     }
 })
 
+function quickTimes(n){
+    let display
+    if(getTimes().length < n){
+        display = getTimes().reverse()
+    } else {
+        display = getTimes().slice(-n).reverse()
+    }
+    $("recents").innerHTML = ""
+    for(let i = 0; i<display.length; i++){
+        let newElement = document.createElement("span")
+        newElement.innerText = display[i][0]
+        newElement.className = display[i][1]
+        newElement.style.backgroundColor = "#5e7c88"
+        newElement.style.borderRadius = "5px"
+        newElement.style.margin = "2px"
+        newElement.style.boxShadow = "1px 1px 3px rgba(0, 0, 0, 0.15)"
+        $("recents").appendChild(newElement)
+    }
+}
+
 document.addEventListener("keyup", function (event) {
     let key = event.key
     if (isKeyDown) {
@@ -81,3 +103,7 @@ document.addEventListener("keyup", function (event) {
         }
     }
 })
+
+document.body.onload = () => {
+    quickTimes(n)
+}
