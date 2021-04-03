@@ -84,10 +84,6 @@ function quickTimes(n){
         let newElement = document.createElement("span")
         newElement.innerText = display[i][0]
         newElement.className = display[i][1]
-        newElement.style.backgroundColor = "#5e7c88"
-        newElement.style.borderRadius = "5px"
-        newElement.style.margin = "2px"
-        newElement.style.boxShadow = "1px 1px 3px rgba(0, 0, 0, 0.15)"
         $("recents").appendChild(newElement)
     }
 }

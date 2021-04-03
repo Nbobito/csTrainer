@@ -131,6 +131,24 @@ body {
                     margin: 0;
                 }
 
+                #recents {
+                    span {
+                        background-color: #5e7c88;
+                        border-radius: 5px;
+                        margin: 5px;
+                        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+                        transition: ease box-shadow 0.5s;
+                    }
+
+                    span:hover {
+                        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.40);
+                    }
+
+                    span:active {
+                        box-shadow: 0 0 2px rgba(0, 0, 0, 0.40);
+                    }
+                    
+                }
             }
         }
     }

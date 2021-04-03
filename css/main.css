@@ -139,6 +139,26 @@ body {
   margin: 0;
 }
 
+.container .case .case-main .case-container #recents span {
+  background-color: #5e7c88;
+  border-radius: 5px;
+  margin: 5px;
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+          box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  -webkit-transition: ease box-shadow 0.5s;
+  transition: ease box-shadow 0.5s;
+}
+
+.container .case .case-main .case-container #recents span:hover {
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.container .case .case-main .case-container #recents span:active {
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+}
+
 @media screen and (max-width: 700px) {
   .container {
     display: -ms-grid;
