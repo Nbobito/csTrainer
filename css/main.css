@@ -20,6 +20,26 @@ body {
   overflow: hidden;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(14%, #3090AD), color-stop(39%, #3dc2eb));
+  background: linear-gradient(0deg, #3090AD 14%, #3dc2eb 39%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(13deg, #639eb0 14%, #88c8de 64%);
+}
+
+::-webkit-scrollbar-track {
+  background: #3db3d6;
+  border-radius: 15px;
+}
+
 .container {
   display: -ms-grid;
   display: grid;
@@ -120,6 +140,7 @@ body {
   background-color: #3db3d6;
   -webkit-box-shadow: -4px 0 8px rgba(0, 0, 0, 0.15);
           box-shadow: -4px 0 8px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
 }
 
 .container .case .case-main {
@@ -131,6 +152,10 @@ body {
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   padding: 1em;
+}
+
+.container .case .case-main .case-container img {
+  width: 100%;
 }
 
 .container .case .case-main .case-container * {
