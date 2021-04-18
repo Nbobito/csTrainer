@@ -1,0 +1,16 @@
+{
+    "pll" : [
+        {
+            "name" : "Ua",
+            "path" : "img/pll/ua.png"
+        },
+        {
+            "name" : "Ub",
+            "path" : "img/pll/ub.png"
+        },
+        {
+            "name" : "Z",
+            "path" : "img/pll/z.png"
+        }
+    ]
+}
