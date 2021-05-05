@@ -1,0 +1,22 @@
+{
+  "name": "cstrainer",
+  "version": "0.6.0",
+  "description": "A speedcubing trainer",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nbobito/csTrainer.git"
+  },
+  "keywords": [
+    "cubing"
+  ],
+  "author": "Nathan Galley",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Nbobito/csTrainer/issues"
+  },
+  "homepage": "https://github.com/Nbobito/csTrainer#readme"
+}
