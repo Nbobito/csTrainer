@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Nbobito/csTrainer/issues"
   },
-  "homepage": "https://github.com/Nbobito/csTrainer#readme"
+  "homepage": "https://github.com/Nbobito/csTrainer#readme",
+  "dependencies": {
+    "open": "^8.0.7"
+  }
 }

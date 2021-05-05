@@ -2,4 +2,5 @@
 .*/
 !.gitignore
 !.helpers
+node_modules/
 memos.txt
