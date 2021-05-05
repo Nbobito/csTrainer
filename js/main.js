@@ -18,10 +18,6 @@ function getTimerValue(format = true) {
 function updateTimer(displayTime) {
     $("timer").innerHTML = displayTime || getTimerValue()
 }
-
-function setInnerHtml(ele, dat) {
-    $(ele).innerHTML = dat
-}
 let timeoutReady
 let n = 30
 let type = "free"

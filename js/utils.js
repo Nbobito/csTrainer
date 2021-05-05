@@ -6,6 +6,10 @@ function _(ele){
     return document.getElementsByTagName(ele)
 }
 
+function setInnerHtml(ele, dat) {
+    $(ele).innerHTML = dat
+}
+
 function storeTime(time, type){
     let times = getTimes()
     times.push([time, type])
